@@ -13,34 +13,59 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 #three,
 #two,
 #one {
-  color: white;
+  color:white ;
 }
 #three {
-  background-color: purple;
+  background-color:orange;
 }
 #two {
-  background-color: green;
+  background-color:blue;
 }
 #one {
-  background-color: red;
+  background-color:purple;
 }
 
 
 /* ==== LAYOUT STYLES ==== */
 #content {
-
+  display: flex;
+  flex-flow: column-reverse nowrap;
 }
 
 #three,
 #two,
 #one {
-
+  height: 100vw;
 }
 
 @media screen and (min-width: 600px) {
+  #content {
+    flex-flow: row-reverse wrap;
+  }
 
+  #one,
+  #two {
+    flex-grow: 2;
+    height: 50vw;
+  }
+
+  #three {
+    order: 1;
+    width: 100vw;
+  }
 }
 
 @media screen and (min-width: 800px) {
+  #content {
+    flex-flow: row-reverse nowrap;
+  }
 
+  #one,
+  #two,
+  #three {
+    order: 0;
+    flex-grow: 1;
+    width: auto;
+    height: 33vw;
+  }
 }
